@@ -2,6 +2,7 @@ function ask(text, callback) {
 		
 		//Zadaj pytanie
 	    var msg = new SpeechSynthesisUtterance('Chrum chrum, zapytaj o coś');
+		msg.lang = "es-ES";
 		window.speechSynthesis.speak(msg);
         
         recognition.onend = function (e) {
