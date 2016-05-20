@@ -1,0 +1,5 @@
+1. odpalasz hfs.exe
+2. przeci¹gasz wszystkie *.js i *.html do niego
+3. klikasz prawym na przeci¹gniêty index.html i wybierasz copy URL
+4. odpalasz w Google Chrum Chrum
+5. dzia³a
