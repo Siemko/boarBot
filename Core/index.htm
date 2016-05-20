@@ -1,11 +1,15 @@
 <!doctype html>
-<html data-ng-app="boarBotApp" lang="pl">
+<html lang="pl" data-ng-app="boarBotApp">
 <head>
     <meta charset="utf-8" />
     <title>BoarBot - Cool Application Bor!</title>
     <meta name="author" content="Sekcja 1 (Killer)" />
     <link rel="shortcut icon" href="favicon.png" />
     
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <script src="assets/libs/jquery-2.2.4.min.js"></script>
+    <script src="assets/libs/bootstrap.min.js"></script>
+
     <!-- Angular App -->
     <script src="assets/libs/angular.min.js"></script>
     <script src="assets/js/angular-route.min.js"></script>
@@ -13,9 +17,11 @@
     <script src="app/app.js"></script>
     <!-- App modules create-presentation -->
     <script src="app/modules/create-presentation/controllers/CreatePresentationCtrl.js"></script>
+    <!-- App modules main -->
+    <script src="app/modules/main/controllers/MainCtrl.js"></script>
     
 </head>
 <body>
-    <div ng-view></div>
+    <div data-ng-view></div>
 </body>
 </html>
