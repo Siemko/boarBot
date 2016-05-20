@@ -1,0 +1,31 @@
+body {
+   background-color: #f8f8f8; 
+}
+
+.slides-menu {
+    padding: 10px;
+    border-right: 1px solid #c8c8c8
+}
+
+.slide {
+    margin: 10px;
+    border: 1px solid #c8c8c8;
+    border-radius: 5px;
+    padding: 10px;
+    background: #fff;
+    height: 200px;
+}
+
+.slide-options {
+    opacity: 0.3;
+    transition: opacity 1s;
+}
+
+.slide-options:hover {
+    opacity: 0.8;
+}
+
+.presentation-menu {
+    height: 60px;
+    border-bottom: 1px solid #c8c8c8
+}
