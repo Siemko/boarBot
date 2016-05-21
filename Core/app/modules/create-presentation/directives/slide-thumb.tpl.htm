@@ -10,6 +10,6 @@
         </div>
     </div>
     <div class="slide-thumb-content" ng-click="selectSlide()">
-        {{slide}}
+        <div ng-bind-html="renderSlideHtml(slide)"></div>
     </div>
 </div>

@@ -9,13 +9,11 @@ app.controller('CreatePresentationCtrl', function ($scope, $rootScope, $sce) {
         $rootScope.$broadcast('addMarker', marker);
     }
     
-    $scope.renderSlideHtml = function(content) {
-        var html = sharedFunctions.toHtmlSlide(content);
+    $scope.renderSlideHtml = function(slide) {
+        var html = sharedFunctions.toHtmlSlide(slide.Content);
+        html = "<div style='background-color: " + slide.Background + ";'>" + html + "</div>"; 
         return $sce.trustAsHtml(html);
     };
-    $("#background").change(function() {
-  console.log("Input text changed!");
-});
     
     $scope.viewMode = function() {
         $scope.editSlideMode = false;

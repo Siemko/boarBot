@@ -7,7 +7,14 @@ app.directive('slideThumb', function () {
       scope: {
         slide: '='
       },
-      controller: function ($scope, $element, $rootScope) {
+      controller: function ($scope, $element, $rootScope, $sce) {
+        
+        $scope.renderSlideHtml = function(slide) {
+          var html = sharedFunctions.toHtmlSlide(slide.Content);
+          html = "<div class='slide-thumbnail' style='background-color: " + slide.Background + ";'>" + html + "</div>"; 
+          return $sce.trustAsHtml(html);
+      };
+        
         $scope.newSlide = function () {
           var id = $scope.slide.Id;
           $rootScope.slides.splice(id, 0, {Id: id}); 
@@ -15,6 +22,8 @@ app.directive('slideThumb', function () {
         }
         
         $scope.deleteSlide = function () {
+          if($rootScope.slides.length === 1)
+            return;
           var id = $scope.slide.Id - 1;
           $rootScope.slides.splice(id, 1); 
           updateIds();
