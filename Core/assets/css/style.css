@@ -7,13 +7,28 @@ body {
     border-right: 1px solid #c8c8c8
 }
 
+.slide-thumb-content {
+    height: 100%;
+    width: 100%;
+    margin-top: -20px;
+    background-color: #ddd;
+}
+
 .slide {
     margin: 10px;
     border: 1px solid #c8c8c8;
     border-radius: 5px;
-    padding: 10px;
     background: #fff;
     height: 50px;
+    cursor: pointer;
+}
+
+.slide:hover {
+    border: 2px solid #ffa9a9;
+}
+
+.slide-selected {
+    border: 2px solid #ffa9a9;
 }
 
 .slide-content {
@@ -22,6 +37,7 @@ body {
  }
  
 .slide-options {
+    padding: 10px;
     opacity: 0.3;
     transition: opacity 1s;
     z-index: -999;

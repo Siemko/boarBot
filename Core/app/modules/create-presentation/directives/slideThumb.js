@@ -38,6 +38,14 @@ app.directive('slideThumb', function () {
           updateIds();
         }
         
+        $scope.selectSlide = function() {
+          $rootScope.slides.forEach(function (slide) {
+            slide.Selected = false;
+          })
+          $scope.slide.Selected = true;
+          $rootScope.selectedSlide = $scope.slide;
+        }
+        
         function updateIds() {
           var slides = $rootScope.slides;
           for(var i = 0; i < slides.length; i++)
