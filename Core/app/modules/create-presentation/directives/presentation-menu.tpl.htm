@@ -9,31 +9,30 @@
                     Czcionka <span class="caret"></span>
                 </button>
             <ul class="dropdown-menu">
-                <li><a href="#">Times New Roman</a></li>
-                <li><a href="#">Arial</a></li>
-                <li><a href="#">Comic Sans</a></li>
+                <li><a ng-click="addMark('[TimesNewRoman][/TimesNewRoman]')">Times New Roman</a></li>
+                <li><a ng-click="addMark('[Arial][/Arial]')">Arial</a></li>
+                <li><a ng-click="addMark('[ComicSans][/ComicSans]')">Comic Sans</a></li>
             </ul>
         </li>
         <li class="btn-group pull-left" role="group">
-            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-bold"></i></button>
-            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-italic"></i></button>
-            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-underline"></i></button>
-            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-strikethrough"></i></button>
+            <button type="button" class="btn btn-default btn-sm" ng-click="addMark('[b][/b]')"><i class="fa fa-bold"></i></button>
+            <button type="button" class="btn btn-default btn-sm" ng-click="addMark('[i][/i]')"><i class="fa fa-italic"></i></button>
+            <button type="button" class="btn btn-default btn-sm" ng-click="addMark('[u][/u]')"><i class="fa fa-underline"></i></button>
+            <button type="button" class="btn btn-default btn-sm" ng-click="addMark('[s][/s]')"><i class="fa fa-strikethrough"></i></button>
         </li>
         <li class="btn-group pull-left" role="group">
-            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-align-left"></i></button>
-            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-align-center"></i></button>
-            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-align-right"></i></button>
-            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-align-justify"></i></button>
+            <button type="button" class="btn btn-default btn-sm" ng-click="addMark('[left][/left]')"><i class="fa fa-align-left"></i></button>
+            <button type="button" class="btn btn-default btn-sm" ng-click="addMark('[center][/center]')"><i class="fa fa-align-center"></i></button>
+            <button type="button" class="btn btn-default btn-sm" ng-click="addMark('[right][/right]')"><i class="fa fa-align-right"></i></button>
+            <button type="button" class="btn btn-default btn-sm" ng-click="addMark('[justify][/justify]')"><i class="fa fa-align-justify"></i></button>
         </li>
         <li class="btn-group pull-left">
             <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Styl <span class="caret"></span>
                 </button>
             <ul class="dropdown-menu">
-                <li><a href="#">Nagówek 1</a></li>
-                <li><a href="#">Nagówek 6</a></li>
-                <li><a href="#">Tiny text</a></li>
+                <li><a ng-click="addMark('[h1][/h1]')">Nagłówek 1</a></li>
+                <li><a ng-click="addMark('[h2][/h2]')">Nagłówek 2</a></li>
             </ul>
         </li>
         <li class="btn-group pull-left" role="group">
@@ -71,4 +70,9 @@
             </div>
         </li>
     </ul>
+        <script>
+            $(function() {
+                $('#cp2').colorpicker();
+            });
+        </script>
 </div>
