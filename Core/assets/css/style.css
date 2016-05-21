@@ -16,9 +16,15 @@ body {
     height: 50px;
 }
 
+.slide-content {
+     position: fixed;
+     top: 60px;
+ }
+ 
 .slide-options {
     opacity: 0.3;
     transition: opacity 1s;
+    z-index: -999;
 }
 
 .slide-options:hover {
@@ -31,6 +37,7 @@ body {
     height: 60px;
     border-bottom: 1px solid #c8c8c8;
     padding: 15px;
+    z-index: 999;
 }
 
 /* scale to screen resolution */
