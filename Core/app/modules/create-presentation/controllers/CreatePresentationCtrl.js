@@ -1,4 +1,3 @@
-app.controller('CreatePresentationCtrl', function ($scope) {
-    $scope.test = "TEST";
-    $scope.slides = [1,2,3,4,5,6,7,8];
+app.controller('CreatePresentationCtrl', function ($scope, $rootScope) {
+    $rootScope.slides= [{Id: 1, Content: 'daw'},{Id: 2, Content: 'milka'}];
 });
