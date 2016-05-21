@@ -1,9 +1,10 @@
 <div class="presentation-menu">
     <ul class="list-inline">
         <li class="btn-group pull-left" role="group">
-            <button type="button" class="btn btn-default btn-sm" disabled><i class="fa fa-eye" style="color: green"></i></button>
-            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-pencil"></i></button>
+            <button type="button" class="btn btn-default btn-sm" ng-click="viewMode()" ng-disabled="viewSlideMode"><i class="fa fa-eye" style="color: green"></i></button>
+            <button type="button" class="btn btn-default btn-sm" ng-click="editMode()" ng-disabled="editSlideMode"><i class="fa fa-pencil"></i></button>
         </li>
+        <fieldset ng-disabled="viewSlideMode"> 
         <li class="btn-group pull-left">
             <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Czcionka <span class="caret"></span></button>
             <ul class="dropdown-menu">
@@ -59,13 +60,16 @@
         </li>
         <li class="btn-group col-xs-1">
             <div id="cp2" class="colorpicker-component">
+                <input id="background" ng-model="lol">
                 <span class="input-group-addon">Kolor tła <i></i></span>
             </div>
         </li>
+        </fieldset> 
     </ul>
         <script>
             $(function() {
-                $('#cp2').colorpicker();
+                console.log($('#cp2').colorpicker());
+                console.log($('#cp2'));
             });
         </script>
 </div>

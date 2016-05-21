@@ -2,29 +2,42 @@ var sharedFunctions = (function () {
   "use strict";
    return {
       toHtmlSlide: (function (code) {
-          //Font Replace
-          var output = code.replace(/\[b\](.*?)\[\/b\]/g, "<b>$1</b>");
-          var output = code.replace(/\[b\](.*?)\[\/b\]/g, "<b>$1</b>");
-        return console.log(output + lol());
+        code = code.replace(/(?:\r\n|\r|\n)/g, '<br />');
+        for(var key in sharedFunctions.markers) {
+            var value = sharedFunctions.markers[key];
+            if(Array.isArray(value)) {
+                for(var i = 0; i < value.length; i++)
+                    code = replaceMarker(code, value[i]); 
+                continue;
+            }
+            code = replaceMarker(code, value); 
+        }
+        return code;
       }),
       markers: { 
-          Fonts: [{tag: 'TimesNewRoman', html: '', name: 'Times New Roman'}, 
-            {tag: 'Arial', html: '', name: 'Arial'}, 
-            {tag: 'ComicSans', html: '', name: 'Comic Sans'}],
-          Bold: {tag: 'b', html: ''}, 
-          Italic: {tag: 'i', html: ''}, 
-          Underline: {tag: 'u', html: ''}, 
-          Strike: {tag: 's', html: ''}, 
-          AlignLeft: {tag: 'left', html: ''}, 
-          AlignCenter: {tag: 'center', html: ''}, 
-          AlignRight: {tag: 'right', html: ''}, 
-          AlignJustify: {tag: 'justify', html: ''}, 
-          Style: [{tag: 'h1', html: '', name: 'Nagłówek 1'}, 
-            {tag: 'h2', html: '', name: 'Nagłówek 2'}, 
-            {tag: 'h3', html: '', name: 'Nagłówek 3'},
-            {tag: 'h4', html: '', name: 'Nagłówek 4'}, 
-            {tag: 'h5', html: '', name: 'Nagłówek 5'}, 
-            {tag: 'h6', html: '', name: 'Nagłówek 6'}],
+          Fonts: [{tag: 'TimesNewRoman', html: "<span class='font-times-new-roman'>{v}</span>", name: 'Times New Roman'}, 
+            {tag: 'Arial', html: "<span class='font-arial'>{v}</span>", name: 'Arial'}, 
+            {tag: 'ComicSans', html: "<span class='font-comic-sans'>{v}</span>", name: 'Comic Sans'}],
+          Bold: {tag: 'b', html: '<b>{v}</b>'}, 
+          Italic: {tag: 'i', html: '<i>{v}</i>'}, 
+          Underline: {tag: 'u', html: '<u>{v}</u>'}, 
+          Strike: {tag: 's', html: '<s>{v}</s>'}, 
+          AlignLeft: {tag: 'left', html: "<span class='align-left'>{v}</span>"}, 
+          AlignCenter: {tag: 'center', html: "<span class='align-center'>{v}</span>"}, 
+          AlignRight: {tag: 'right', html: "<span class='align-right'>{v}</span>"}, 
+          AlignJustify: {tag: 'justify', html: "<span class='align-justify'>{v}</span>"}, 
+          Style: [{tag: 'h1', html: '<h1>{v}</h1>', name: 'Nagłówek 1'}, 
+            {tag: 'h2', html: '<h2>{v}</h2>', name: 'Nagłówek 2'}, 
+            {tag: 'h3', html: '<h3>{v}</h3>', name: 'Nagłówek 3'},
+            {tag: 'h4', html: '<h4>{v}</h4>', name: 'Nagłówek 4'}, 
+            {tag: 'h5', html: '<h5>{v}</h5>', name: 'Nagłówek 5'}, 
+            {tag: 'h6', html: '<h6>{v}</h6>', name: 'Nagłówek 6'}],
           }
    };
 }());
+
+function replaceMarker(code, marker) {
+    var rgx = new RegExp("\\[" + marker.tag + "\\](.*?)\\[\/" + marker.tag + "\\]", "g");
+    var values = code.match(rgx);
+    return code.replace(rgx, marker.html.replace("{v}", "$1"));
+}
