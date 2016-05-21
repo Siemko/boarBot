@@ -1,7 +1,7 @@
 app.directive('slideContent', ['$rootScope', function ($rootScope) {
     return {
         link: function (scope, element, attrs) {
-            $rootScope.$on('add', function (e, val) {
+            $rootScope.$on('addMarker', function (e, val) {
                 var domElement = element[0];
                 if (document.selection) {
                     domElement.focus();
