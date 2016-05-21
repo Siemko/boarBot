@@ -30,11 +30,14 @@ body {
 .slide-thumbnail {
     font-size: 10px !important;
     min-height: 50px;
+    max-width: 100%;
     position: absolute;
     top: 0;
     left: 0;
     padding: 10px;
     z-index: -1;
+    overflow: hidden;
+    word-wrap: break-word;
 }
 
 .slide:hover, .slide-selected {
