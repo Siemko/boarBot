@@ -1,24 +1,89 @@
-<div class="row">
-    <div class="col-xs-3 slides-menu">
-        <div class="slide">
-        <div class="slide-options">
-        <div class="pull-left">
-            <button class="btn btn-primary btn-xs"><i class="fa fa-chevron-down"></i></button>
-            <button class="btn btn-primary btn-xs"><i class="fa fa-chevron-up"></i></button>
-        </div>
-        <div class="pull-right">
-            <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
-            <button class="btn btn-success btn-xs"><i class="fa fa-plus"></i></button>
-        </div>
-            </div>
-        </div>
+<div class="row container">
+    <div class="col-xs-3 slides">
+        <slide-thumb ng-repeat="slide in slides track by $index"></slide-thumb>
     </div>
     <div class="col-xs-9">
         <div class="row presentation-menu">
-           
-         </div>
-        <div class="row">
-            Tutaj będzie slajd :)
-         </div>
+            <ul class="list-inline">
+                <li class="btn-group pull-left" role="group">
+                    <button type="button" class="btn btn-default btn-sm" disabled><i class="fa fa-eye" style="color: green"></i></button>
+                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-pencil"></i></button>
+                </li>
+                <li class="btn-group pull-left">
+                    <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Czcionka <span class="caret"></span>
+                </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Times New Roman</a></li>
+                        <li><a href="#">Arial</a></li>
+                        <li><a href="#">Comic Sans</a></li>
+                    </ul>
+                </li>
+                <li class="btn-group pull-left" role="group">
+                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-bold"></i></button>
+                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-italic"></i></button>
+                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-underline"></i></button>
+                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-strikethrough"></i></button>
+                </li>
+                <li class="btn-group pull-left" role="group">
+                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-align-left"></i></button>
+                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-align-center"></i></button>
+                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-align-right"></i></button>
+                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-align-justify"></i></button>
+                </li>
+                <li class="btn-group pull-left">
+                    <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Styl <span class="caret"></span>
+                </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Nagówek 1</a></li>
+                        <li><a href="#">Nagówek 6</a></li>
+                        <li><a href="#">Tiny text</a></li>
+                    </ul>
+                </li>
+                <li class="btn-group pull-left" role="group">
+                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-picture-o"></i></button>
+                </li>
+                <li class="btn-group pull-left">
+                    <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Animacja <span class="caret"></span>
+                </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Animacja 1</a></li>
+                        <li><a href="#">Animacja 2</a></li>
+                        <li><a href="#">Animacja 3</a></li>
+                    </ul>
+                </li>
+                <li role="group" class="col-xs-1">
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control" placeholder="Rotacja">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"><i class="fa fa-repeat"></i></button>
+                        </span>
+                    </div>
+                </li>
+                <li role="group" class="col-xs-1">
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control" placeholder="Pozycja">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"><i class="fa fa-sort"></i></button>
+                        </span>
+                    </div>
+                </li>
+                <li class="btn-group col-xs-1">
+                    <div id="cp2" class="colorpicker-component">
+                        <span class="input-group-addon">Kolor tła <i></i></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="row" style="position: fixed; top: 60px">
+            Tutaj będzie slajd :)<br/>
+        </div>
+        <script>
+    $(function() {
+        $('#cp2').colorpicker();
+    });
+</script>
     </div>
-</div>
