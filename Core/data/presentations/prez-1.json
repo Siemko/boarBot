@@ -2,13 +2,13 @@
     {
         "Id": 1,
         "Content": "[swing][rotating][h6][h3][b]dawsadg [\/b]as gads[footnote][\/footnote] [h6]dga [\/h6]s[b][\/b]     [s][\/s] [center][\/center][right][\/right][\/h3][\/h6][\/rotating][\/swing]",
-        "Selected": true,
+        "Selected": false,
         "Background": "#f8f8f8"
     },
     {
         "Id": 2,
-        "Content": "[b]milkavasd sg asdg as [\/b] [i]dsagdsg[\/i] [b][\/b]",
-        "Selected": false,
+        "Content": "[b]milkavasd sg asdg as [\/b] [i]dsagdsg[\/i] [b][\/b]dssfdsagdsagsdagsadgsdag\nsdag\ndsag\n\nasdg\nsdagsdagsdagadsgsadgsdadgsadddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "Selected": true,
         "Background": "#692121"
     },
     {

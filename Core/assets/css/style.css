@@ -30,6 +30,7 @@ body {
 .slide-thumbnail {
     font-size: 10px !important;
     min-height: 50px;
+    min-width: 100%;
     max-width: 100%;
     position: absolute;
     top: 0;
