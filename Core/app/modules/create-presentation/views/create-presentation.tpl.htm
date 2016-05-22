@@ -6,8 +6,11 @@
         <div class="row">
             <presentation-menu></presentation-menu>
         </div>
-        <div class="row slide-content"  ng-style="{'background-color': viewSlideMode ? selectedSlide.Background : '#f8f8f8'}">
-            <textarea rows="30" cols="100" slide-content="" ng-model="selectedSlide.Content" ng-if="editSlideMode"></textarea>
+        <div class="row slide-content" ng-style="{'background-color': viewSlideMode ? selectedSlide.Background : '#f8f8f8'}">
+            <textarea rows="25" cols="100" slide-content="" ng-model="selectedSlide.Content" ng-if="editSlideMode"></textarea>
             <div ng-bind-html="renderSlideHtml(selectedSlide)" ng-if="viewSlideMode"></div>
         </div>
+        <button type="button" class="btn btn-lg btn-danger btn-transcript" ng-click="transkryptModal = true"><i class="fa fa-comments"></i></button>
+        
+        <transkrypt visible="transkryptModal" slide="selectedSlide"></transkrypt>
     </div>

@@ -73,6 +73,18 @@ body {
     z-index: 999;
 }
 
+.btn-transcript {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.modal-transkrypt {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
 .font-times-new-roman {
     font-family: "Times New Roman", Times, serif;
 }
