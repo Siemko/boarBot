@@ -1,8 +1,14 @@
 app.controller('CreatePresentationCtrl', function ($scope, $rootScope, $sce, CreatePresentationService) {
     
+    $rootScope.slides = CreatePresentationService.query({id: 1});
+    
+    $scope.$watch('slides', function (newVal, oldVal) { 
+        console.log('saf');
+        CreatePresentationService.uploadPresentation({ id: 1, prezId: 1, data: $rootScope.slides});
+    }, true);
+    
     $scope.editSlideMode = true;
     $scope.markers = sharedFunctions.markers;
-    $rootScope.slides= [{Id: 1, Content: 'daw'},{Id: 2, Content: 'milka'}];
     
     $scope.addMark = function(tag) {
         var marker = '[' + tag + '][/' + tag + ']'
@@ -25,7 +31,4 @@ app.controller('CreatePresentationCtrl', function ($scope, $rootScope, $sce, Cre
         $scope.viewSlideMode = false;
     };
     
-    var lol = CreatePresentationService.get({id: 1});
-    CreatePresentationService.uploadPresentation({ id: 1, prezId: 1, data: $rootScope.slides});
-    console.log(lol);
 });

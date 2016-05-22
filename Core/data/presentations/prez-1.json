@@ -1,10 +1,17 @@
 [
     {
         "Id": 1,
-        "Content": "daw"
+        "Content": "dawsadg as gads dga s",
+        "Selected": false,
+        "Background": "#a32828"
     },
     {
         "Id": 2,
-        "Content": "milka"
+        "Content": "[b]milkavasd sg asdg as [\/b] [i]dsagdsg[\/i]",
+        "Selected": true,
+        "Background": "#692121"
+    },
+    {
+        "Id": 3
     }
 ]
