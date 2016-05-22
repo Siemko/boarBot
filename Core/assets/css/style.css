@@ -30,6 +30,7 @@ body {
 .slide-thumbnail {
     font-size: 10px !important;
     min-height: 50px;
+    min-width: 100%;
     max-width: 100%;
     position: absolute;
     top: 0;
@@ -70,6 +71,30 @@ body {
     border-bottom: 1px solid #c8c8c8;
     padding: 15px;
     z-index: 999;
+}
+
+.btn-transcript {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.modal-transkrypt {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.font-times-new-roman {
+    font-family: "Times New Roman", Times, serif;
+}
+
+.font-arial {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.font-comic-sans {
+    font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 /* scale to screen resolution */

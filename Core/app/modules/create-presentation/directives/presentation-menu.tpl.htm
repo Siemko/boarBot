@@ -23,45 +23,28 @@
             <button type="button" class="btn btn-default btn-sm" ng-click="addMark(markers.AlignRight.tag)"><i class="fa fa-align-right"></i></button>
             <button type="button" class="btn btn-default btn-sm" ng-click="addMark(markers.AlignJustify.tag)"><i class="fa fa-align-justify"></i></button>
         </li>
-        <li class="btn-group">
-            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Styl <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-                <li ng-repeat="styleMarker in markers['Style']"><a ng-click="addMark(styleMarker.tag)">{{styleMarker.name}}</a></li>
-            </ul>
-        </li>
         <li class="btn-group" role="group">
             <button type="button" class="btn btn-default btn-sm"><i class="fa fa-picture-o"></i></button>
         </li>
         <li class="btn-group">
-            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Animacja <span class="caret"></span>
-                </button>
+            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Styl <span class="caret"></span></button>
             <ul class="dropdown-menu">
-                <li><a href="#">Animacja 1</a></li>
-                <li><a href="#">Animacja 2</a></li>
-                <li><a href="#">Animacja 3</a></li>
+                <li ng-repeat="styleMarker in markers['Styles']"><a ng-click="addMark(styleMarker.tag)">{{styleMarker.name}}</a></li>
             </ul>
         </li>
-        <li class="menu-input btn-group">
-            <div class="input-group input-group-sm">
-                <input type="text" class="form-control" placeholder="Rotacja">
-                <span class="input-group-btn">
-                            <button class="btn btn-default" type="button"><i class="fa fa-repeat"></i></button>
-                        </span>
-            </div>
-        </li>
-        <li class="menu-input btn-group">
-            <div class="input-group input-group-sm">
-                <input type="text" class="form-control" placeholder="Pozycja">
-                <span class="input-group-btn">
-                            <button class="btn btn-default" type="button"><i class="fa fa-sort"></i></button>
-                        </span>
-            </div>
+        <li class="btn-group">
+            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Animacja <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li ng-repeat="styleMarker in markers['Animations']"><a ng-click="addMark(styleMarker.tag)">{{styleMarker.name}}</a></li>
+            </ul>
         </li>
         <li class="btn-group">
             <button class="btn btn-default btn-sm" colorpicker type="button" colorpicker-position="bottom" ng-model="selectedSlide.Background" ng-style="{'background-color': selectedSlide.Background}">Kolor tła</button>
             <button type="button" class="btn btn-default btn-sm" ng-click="selectedSlide.Background = '#f8f8f8'"><i class="fa fa-eraser"></i></button>
         </li>
         </fieldset> 
+        <li class="btn-group" role="group">
+            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-picture-o"></i></button>
+        </li>
     </ul>
 </div>
