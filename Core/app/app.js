@@ -1,4 +1,4 @@
-var app = angular.module('boarBotApp', ['ngRoute', 'colorpicker.module']);
+var app = angular.module('boarBotApp', ['ngRoute', 'ngResource', 'colorpicker.module']);
 
 app.config(['$routeProvider',
     function ($routeProvider) {

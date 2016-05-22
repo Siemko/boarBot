@@ -1,4 +1,4 @@
-app.controller('CreatePresentationCtrl', function ($scope, $rootScope, $sce) {
+app.controller('CreatePresentationCtrl', function ($scope, $rootScope, $sce, CreatePresentationService) {
     
     $scope.editSlideMode = true;
     $scope.markers = sharedFunctions.markers;
@@ -24,4 +24,8 @@ app.controller('CreatePresentationCtrl', function ($scope, $rootScope, $sce) {
         $scope.editSlideMode = true;
         $scope.viewSlideMode = false;
     };
+    
+    var lol = CreatePresentationService.get({id: 1});
+    CreatePresentationService.uploadPresentation({ id: 1, prezId: 1, data: $rootScope.slides});
+    console.log(lol);
 });
