@@ -28,12 +28,17 @@ var sharedFunctions = (function () {
           AlignCenter: {tag: 'center', html: "<span class='align-center'>{v}</span>"}, 
           AlignRight: {tag: 'right', html: "<span class='align-right'>{v}</span>"}, 
           AlignJustify: {tag: 'justify', html: "<span class='align-justify'>{v}</span>"}, 
-          Style: [{tag: 'h1', html: '<h1>{v}</h1>', name: 'Nagłówek 1'}, 
+          Styles: [{tag: 'h1', html: '<h1>{v}</h1>', name: 'Nagłówek 1'}, 
             {tag: 'h2', html: '<h2>{v}</h2>', name: 'Nagłówek 2'}, 
             {tag: 'h3', html: '<h3>{v}</h3>', name: 'Nagłówek 3'},
             {tag: 'h4', html: '<h4>{v}</h4>', name: 'Nagłówek 4'}, 
             {tag: 'h5', html: '<h5>{v}</h5>', name: 'Nagłówek 5'}, 
-            {tag: 'h6', html: '<h6>{v}</h6>', name: 'Nagłówek 6'}],
+            {tag: 'h6', html: '<h6>{v}</h6>', name: 'Nagłówek 6'}, 
+            {tag: 'footnote', html: "<span class='footnote'>{v}</span>", name: 'Footnote'}],
+          Animations: [{tag: 'scaling', html: "<span class='scaling'>{v}</span>", name: 'Skalowanie'}, 
+            {tag: 'rotating', html: "<span class='rotating'>{v}</span>", name: 'Rotacja'}, 
+            {tag: 'swing', html: "<span class='imagination'>{v}</span>", name: 'Swing'},
+            {tag: 'up', html: "<span class='positioning'>{v}</span>", name: 'W górę'}],
           }
    };
 }());
