@@ -3,7 +3,6 @@ app.controller('CreatePresentationCtrl', function ($scope, $rootScope, $sce, Cre
     $rootScope.slides = CreatePresentationService.query({id: 1});
     
     $scope.$watch('slides', function (newVal, oldVal) { 
-        console.log('saf');
         CreatePresentationService.uploadPresentation({ id: 1, prezId: 1, data: $rootScope.slides});
     }, true);
     

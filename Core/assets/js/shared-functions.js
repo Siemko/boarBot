@@ -2,6 +2,8 @@ var sharedFunctions = (function () {
   "use strict";
    return {
       toHtmlSlide: (function (code) {
+          if(!code)
+            return '';
         code = code.replace(/(?:\r\n|\r|\n)/g, '<br />');
         for(var key in sharedFunctions.markers) {
             var value = sharedFunctions.markers[key];
