@@ -1,3 +1,4 @@
-app.controller('MainCtrl', ['$scope', function ($scope) {
+app.controller('MainCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
+    
     $scope.test = "TEST";
 }]);
