@@ -2,17 +2,18 @@
     {
         "Id": 1,
         "Content": "dawsadg as gads dga s",
-        "Selected": false,
+        "Selected": true,
         "Background": "#a32828",
         "Transkrypt": "Elo ziomeczki :D"
     },
     {
         "Id": 2,
         "Content": "[b]milkavasd sg asdg as [\/b] [i]dsagdsg[\/i]",
-        "Selected": true,
+        "Selected": false,
         "Background": "#692121"
     },
     {
-        "Id": 3
+        "Id": 3,
+        "Selected": false
     }
 ]
