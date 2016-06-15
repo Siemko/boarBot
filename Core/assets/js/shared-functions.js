@@ -69,6 +69,20 @@ window.speechSynthesis.onvoiceschanged = function () {
   speechSynthesisUtterance.volume = 1; // 0 to 1
   speechSynthesisUtterance.rate = 0.8; // 0.1 to 10
   speechSynthesisUtterance.pitch = 1.5; //0 to 2
-
-
 };
+
+speechSynthesisUtterance.onstart = function() {
+  speechSynthesisUtterance.talking = true;
+}
+
+speechSynthesisUtterance.onresume = function() {
+  speechSynthesisUtterance.talking = true;
+}
+
+speechSynthesisUtterance.onpause = function() {
+  speechSynthesisUtterance.talking = false;
+}
+
+speechSynthesisUtterance.onerror = function(event) {
+  speechSynthesisUtterance.talking = false;
+}

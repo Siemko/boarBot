@@ -1,14 +1,51 @@
-app.controller('ShowPresentationCtrl', ['$scope', '$http', '$location', '$sce', '$window', function ($scope, $http, $location, $sce, $window) {
-    $scope.testuje = "TEST";
-    $scope.showSlides = $location.path() === '/show-presentation';
-    $http.get("data/presentations/prez-1.json")
-    .then(function(response) {
-        $scope.slides = response.data;
+app.controller('ShowPresentationCtrl', function ($scope, $http, $sce, CreatePresentationService, $timeout) {
+
+    var renderedSlides = 0;
+    var currentSlide = 0;
+    $scope.loading = true;
+    $scope.pause = false;
+    
+    CreatePresentationService.query({ id: 1 }).$promise.then(function (res) {
+        $scope.slides = [];
+        res.forEach(function (slide) {
+            $scope.slides.push(createSlide(slide));
+        });
     });
-    $window.slides = $scope.slides;
-    $scope.renderSlideHtml = function(slide) {
-          var html = sharedFunctions.toHtmlSlide(slide.Content);
-          html = "<div class='slide_prez step' style='background-color: " + slide.Background + ";'>" + html + "</div>"; 
-          return $sce.trustAsHtml(html);
-      };
-}]);
+    
+    $scope.renderSlideHtml = function (slide) {
+        if(++renderedSlides == $scope.slides.length) {
+            $timeout(function() { $scope.loading = false}, 2000);
+            $timeout(function () { impress().init(); }, 500);
+            $timeout(function() { $scope.presentation(); }, 4000);
+        }
+        return $sce.trustAsHtml(slide.html);
+    };
+
+    function createSlide(slide) {
+        var ids = [ 'its', 'big', 'tiny', 'ing', 'imagination', 'one-more-thing', 'its-in-3d'];
+        var result = {};
+        result.transkrypt = slide.Transkrypt;
+        result.html = '<p>' + sharedFunctions.toHtmlSlide(slide.Content) + '</p>';
+        result.scale = Math.floor(Math.random() * 5 + 1);
+        result.x = Math.floor(Math.random() * (Math.random() < 0.5 ? 5000 : -5000));
+        result.y = Math.floor(Math.random() * (Math.random() < 0.5 ? 4000 : -4000));
+        result.z = Math.floor(Math.random() * (Math.random() < 0.5 ? 1000 : -1000));
+        result.rotate = Math.random() < 0.6 ? 0 : Math.floor(Math.random() * (Math.random() < 0.5 ? 360 : -360));
+        result.id = Math.random() < 0.5 ? '' : ids[Math.floor(Math.random() * (ids.length-1))];
+        return result;
+    };
+
+
+speechSynthesisUtterance.onend = function() {
+        $timeout(function() { 
+            currentSlide++;
+            $scope.presentation();
+        }, 1000);
+}
+
+$scope.presentation = function() {
+    impress().next();
+    $timeout(function() { sharedFunctions.talk($scope.slides[currentSlide].transkrypt); }, 2000);
+}
+    
+});
