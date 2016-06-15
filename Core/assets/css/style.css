@@ -231,3 +231,7 @@ body {
 .slide_prez q strong {
     white-space: nowrap;
 }
+
+.center {
+    margin: 0 auto;
+}

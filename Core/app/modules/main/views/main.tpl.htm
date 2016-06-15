@@ -1,1 +1,43 @@
-Start Page!
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">BoarBot</a>
+      <p class="navbar-text">Copyright &copy; 2016 Sekcja Killer</p>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Prezentacja <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#/create-presentation">Utwórz</a></li>
+            <li><a href="#/show-presentation">Wyświetl</a></li>
+          </ul>
+        </li>
+        <li class="active"><a href="#">Pomoc <span class="sr-only">(current)</span></a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="container-fluid">
+<div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
+        <center>
+        <img class="animated img-responsive" src="assets/img/logo.png" alt="Boar" ng-class="boarAnimation" ng-click="animateBoar()" style="cursor: pointer"/>
+        <button class="btn btn-default btn-success" style="margin-left: -20px;" ng-hide="talkMode" ng-click="enableTalkMode()">Porozmawiajmy <i class="fa fa-comment"></i></button>
+        <button class="btn btn-default btn-danger" style="margin-left: -20px;" ng-show="talkMode" ng-click="disableTalkMode()">Zakończ rozmowę <i class="fa fa-power-off"></i></button>
+        </center>
+        </div>
+    </div>
+    </div>

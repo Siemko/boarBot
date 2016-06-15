@@ -39,12 +39,36 @@ var sharedFunctions = (function () {
         { tag: 'rotating', html: "<span class='rotating'>{v}</span>", name: 'Rotacja' },
         { tag: 'swing', html: "<span class='imagination'>{v}</span>", name: 'Swing' },
         { tag: 'up', html: "<span class='positioning'>{v}</span>", name: 'W górę' }],
-    }
+    },
+    talk: (function (message) {
+      speechSynthesisUtterance.text = message;
+      window.speechSynthesis.speak(speechSynthesisUtterance)
+    })
   }
-}())
+} ())
 
-function replaceMarker (code, marker) {
+function replaceMarker(code, marker) {
   var rgx = new RegExp('\\[' + marker.tag + '\\](.*?)\\[\/' + marker.tag + '\\]', 'g')
   var values = code.match(rgx)
   return code.replace(rgx, marker.html.replace('{v}', '$1'))
 }
+
+//Configure speech recognition
+var recognition = new webkitSpeechRecognition();
+recognition.continuous = false;
+recognition.interimResults = false;
+recognition.lang = "pl-Pl";
+
+//Configure speech synthesis
+var speechSynthesisUtterance = new SpeechSynthesisUtterance();
+window.speechSynthesis.onvoiceschanged = function () {
+  var voices = window.speechSynthesis.getVoices();
+  speechSynthesisUtterance.lang = voices[14].lang;
+  speechSynthesisUtterance.voiceURI = voices[14].voiceURI;
+  speechSynthesisUtterance.voice = voices[14];
+  speechSynthesisUtterance.volume = 1; // 0 to 1
+  speechSynthesisUtterance.rate = 0.8; // 0.1 to 10
+  speechSynthesisUtterance.pitch = 1.5; //0 to 2
+
+
+};
