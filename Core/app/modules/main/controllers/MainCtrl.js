@@ -1,4 +1,5 @@
 app.controller('MainCtrl', ['$scope', '$rootScope', 'MainService', function ($scope, $rootScope, MainService) {
+   
     $scope.talkObj = {};
     var latestMessage = null;
     var recognitionStarted = false;

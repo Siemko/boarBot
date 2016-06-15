@@ -1,6 +1,5 @@
 app.controller('CreatePresentationCtrl', function ($scope, $rootScope, $sce, CreatePresentationService) {
     
-    
     CreatePresentationService.query({id: 1}).$promise.then(function (res) {
         res.forEach(function (slide){ slide.Selected = false; });
         $rootScope.slides = res;

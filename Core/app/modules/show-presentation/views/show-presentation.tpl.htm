@@ -1,19 +1,15 @@
-<div class="btn-group module-menu" role="group" style="z-index:9999999">
-  <button type="button" class="btn btn-default">Strona Główna</button>
-  <button type="button" class="btn btn-success">Rozpocznij</button>
-  <button type="button" class="btn btn-warning">Wstrzymaj</button>
-</div>
-
 <div ng-show="loading" style="position: fixed; top: 50%; left: 50%;">
     <i class="fa fa-spinner fa-pulse fa-5x fa-fw" aria-hidden="true"></i>
 </div>
 
+<div class=row>
 <div id="impress" ng-hide="loading" style="z-index:-9999">
     <div id="overview" class="step" data-x="0" data-y="0" data-scale="12">
     </div>
     
     <div ng-repeat="slide in slides" ng-bind-html="renderSlideHtml(slide)" id="{{slide.id}}" class="step" data-x="{{slide.x}}" data-y="{{slide.y}}" data-scale="{{slide.scale}}">
     </div>
+</div>
 </div>
 
 
