@@ -1,19 +1,21 @@
 [
     {
         "Id": 1,
-        "Content": "dawsadg as gads dga s",
+        "Content": "Slajd nr 1",
         "Selected": true,
         "Background": "#a32828",
         "Transkrypt": "Elo ziomeczki :D"
     },
     {
         "Id": 2,
-        "Content": "[b]milkavasd sg asdg as [\/b] [i]dsagdsg[\/i]",
+        "Content": "[b][i]Slajd nr 2[\/i][\/b]",
         "Selected": false,
-        "Background": "#692121"
+        "Background": "#b3bdcc",
+        "Transkrypt": "jdfgf"
     },
     {
         "Id": 3,
-        "Selected": false
+        "Selected": false,
+        "Content": "Slajd nr 3"
     }
 ]

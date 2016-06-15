@@ -34,7 +34,7 @@
 <div class="row">
     <div class="col-xs-4 col-xs-offset-4">
         <center>
-        <img class="img-responsive" src="assets/img/logo.png" alt="Boar">
+        <img class="animated img-responsive" src="assets/img/logo.png" alt="Boar" ng-class="boarAnimation" ng-click="animateBoar()" style="cursor: pointer"/>
         <button class="btn btn-default btn-success" style="margin-left: -20px;" ng-hide="talkMode" ng-click="enableTalkMode()">Porozmawiajmy <i class="fa fa-comment"></i></button>
         <button class="btn btn-default btn-danger" style="margin-left: -20px;" ng-show="talkMode" ng-click="disableTalkMode()">Zakończ rozmowę <i class="fa fa-power-off"></i></button>
         </center>
