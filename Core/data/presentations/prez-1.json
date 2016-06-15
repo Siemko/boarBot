@@ -1,21 +1,42 @@
 [
     {
         "Id": 1,
-        "Content": "WIt[swing]ajziomku[b]:)[\/b]a[i]sfsda[\/i][\/swing]",
         "Selected": true,
-        "Background": "#a32828",
-        "Transkrypt": "Cze\u015b\u0107zawalonkazasgfdsfd"
+        "Content": "Cze\u015b\u0107 jestem [b]BoarBot[\/b]\n- aplikacja do [scaling]zapewniania [b]towarzystwa[\/b][\/scaling]",
+        "Transkrypt": "Chrum chrum, jestem BoarBot zosta\u0142em stworzony przez sekcj\u0119 killer. Moim zadaniem jest zast\u0119powanie towarzystwa takim informatykom jak moi stw\u00f3rcy."
     },
     {
         "Id": 2,
-        "Content": "[b][i]Slajd nr 2[\/i][\/b]jgj",
         "Selected": false,
-        "Background": "#b3bdcc",
-        "Transkrypt": "jdfgf"
+        "Content": "Rozmowa [b]kluczem [\/b]do [u]przyja\u017ani[\/u]",
+        "Background": "#f289e8",
+        "Transkrypt": "Poprzez rozmow\u0119 cz\u0142owiek nabywa najwi\u0119cej przyja\u017ani, spr\u00f3bujmy si\u0119 zaprzyja\u017ani\u0107 i pokaza\u0107 \u017ce ta teza jest prawdziwa tak\u017ce dla przyjaci\u00f3\u0142 tworzonych w komputerze."
     },
     {
         "Id": 3,
         "Selected": false,
-        "Content": "Slajd nr 3"
+        "Content": "[h1]Potrafi\u0119[\/h1] tworzy\u0107 [b]prezentacj\u0119[\/b][s]!!!![\/s]",
+        "Transkrypt": "Jak nei chcesz marnowa\u0107 czasu na prezentacj\u0119 lub bardzo si\u0119 stresujesz mo\u017cesz wykorzysta\u0107 mnie do tego celu! Potrafi\u0119 zaprezentowa\u0107 to co sobie wyobrazi\u0142e\u015b!"
+    },
+    {
+        "Id": 4,
+        "Selected": false,
+        "Content": "[rotating]I je [b]wy\u015bwietla\u0107 [\/b]:)[\/rotating]",
+        "Background": "#89d9f2",
+        "Transkrypt": "\u017beby wy\u015bwietli\u0107 prezentacj\u0119 musisz tylko klikn\u0105\u0107 wy\u015bwietl na g\u0142\u00f3wnej stronie. W\u0142a\u015bnie tam gdzie ze mn\u0105 rozmawiasz!"
+    },
+    {
+        "Id": 5,
+        "Selected": false,
+        "Content": "Pos\u0142usze\u0144stwo to moje [i][b]drugie IMI\u0118[\/b][\/i]",
+        "Background": "#f2e189",
+        "Transkrypt": "Znam par\u0119 ciekawych komend w miar\u0119 mo\u017cliwo\u015bci rozwijane b\u0119d\u0105 umiej\u0119tno\u015bci kt\u00f3re u\u0142atwi\u0105 komunikacj\u0119 ze mn\u0105. Stworz\u0105 ze mnie prawdziwego przyjaciela!"
+    },
+    {
+        "Id": 6,
+        "Selected": false,
+        "Content": "[footnote][b]Porozmawiaj ze mn\u0105 teraz![\/b][\/footnote]",
+        "Background": "#98f289",
+        "Transkrypt": "Nie czekaj tylko przejd\u017a do menu g\u0142\u00f3wnego i porozmawiaj ze mn\u0105! Ju\u017c nie mog\u0119 si\u0119 na Ciebie doczeka\u0107! Dzi\u0119kuj\u0119 \u017ce mnie wys\u0142ucha\u0142e\u015b!"
     }
 ]

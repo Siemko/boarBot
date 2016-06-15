@@ -4,6 +4,7 @@ app.controller('ShowPresentationCtrl', function ($scope, $http, $sce, CreatePres
     var currentSlide = 0;
     $scope.loading = true;
     $scope.pause = false;
+                recognition.stop();
     
     CreatePresentationService.query({ id: 1 }).$promise.then(function (res) {
         $scope.slides = [];
@@ -27,11 +28,12 @@ app.controller('ShowPresentationCtrl', function ($scope, $http, $sce, CreatePres
         result.transkrypt = slide.Transkrypt;
         result.html = '<p>' + sharedFunctions.toHtmlSlide(slide.Content) + '</p>';
         result.scale = Math.floor(Math.random() * 5 + 1);
-        result.x = Math.floor(Math.random() * (Math.random() < 0.5 ? 5000 : -5000));
-        result.y = Math.floor(Math.random() * (Math.random() < 0.5 ? 4000 : -4000));
+        result.x = Math.floor(Math.random() * (Math.random() < 0.5 ? 3000 : -3000));
+        result.y = Math.floor(Math.random() * (Math.random() < 0.5 ? 3000 : -3000));
         result.z = Math.floor(Math.random() * (Math.random() < 0.5 ? 1000 : -1000));
         result.rotate = Math.random() < 0.6 ? 0 : Math.floor(Math.random() * (Math.random() < 0.5 ? 360 : -360));
         result.id = Math.random() < 0.5 ? '' : ids[Math.floor(Math.random() * (ids.length-1))];
+        result.style = slide.Background ? 'background-color: ' + slide.Background : '';
         return result;
     };
 

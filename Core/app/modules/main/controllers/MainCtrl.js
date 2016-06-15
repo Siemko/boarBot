@@ -1,8 +1,9 @@
-app.controller('MainCtrl', ['$scope', '$rootScope', 'MainService', function ($scope, $rootScope, MainService) {
-   
+app.controller('MainCtrl', ['$scope', '$rootScope', 'MainService', '$window', '$timeout', function ($scope, $rootScope, MainService, $window, $timeout) {
+
     $scope.talkObj = {};
     var latestMessage = null;
     var recognitionStarted = false;
+    $scope.mod = {};
 
     $scope.animateBoar = function () {
         var availableAnimations = ['bounce',
@@ -14,8 +15,8 @@ app.controller('MainCtrl', ['$scope', '$rootScope', 'MainService', function ($sc
             'tada',
             'wobble',
             'jello',];
-         var index = Math.floor((Math.random() * (availableAnimations.length -1)));
-         $scope.boarAnimation = availableAnimations[index];
+        var index = Math.floor((Math.random() * (availableAnimations.length - 1)));
+        $scope.boarAnimation = availableAnimations[index];
     }
 
     $scope.enableTalkMode = function () {
@@ -29,15 +30,18 @@ app.controller('MainCtrl', ['$scope', '$rootScope', 'MainService', function ($sc
     };
 
     recognition.onresult = function (event) {
+        console.log(event);
         for (var i = event.resultIndex; i < event.results.length; ++i) {
             if (event.results[i].isFinal) {
-                recognition.stop();
+                event.srcElement.stop();
                 var msg = event.results[i][0].transcript;
-                MainService.askBot({ ask: msg }).$promise.then(function (res) {
-                    sharedFunctions.talk(res.message);
-                    if(!recognitionStarted)
-                        recognition.start();
-                });
+                if (!openModule(msg)) {
+                    MainService.askBot({ ask: msg }).$promise.then(function (res) {
+                        sharedFunctions.talk(res.message);
+                        if (!recognitionStarted)
+                            recognition.start();
+                    });
+                }
             }
         }
     }
@@ -54,10 +58,28 @@ app.controller('MainCtrl', ['$scope', '$rootScope', 'MainService', function ($sc
         if ($scope.talkMode)
             recognition.start();
     }
-    
+
     recognition.onstart = function () {
         recognitionStarted = true;
     }
 
+    function openModule(msg) {
+        var boarBotNames = [
+            'borbud',
+            'burbot',
+            'Dorbud',
+            'Bourbon',
+            'Burnout',
+            'forbot',
+        ];
+        for (var i = 0; i < boarBotNames.length; i++) {
+            switch (msg.toUpperCase().replace(boarBotNames[i].toUpperCase(), "BOARBOT")) {
+                case 'BOARBOT OJCOWIE':
+                    $scope.showAuthors = true;
+                    $timeout(function() { $scope.showAuthors = false; }, 5000);
+                    return true;
+            }
+        }
+    };
 
 }]);

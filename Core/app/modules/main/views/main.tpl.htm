@@ -1,9 +1,9 @@
-
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+        aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -27,17 +27,46 @@
         </li>
         <li class="active"><a href="#">Pomoc <span class="sr-only">(current)</span></a></li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
 </nav>
 <div class="container-fluid">
-<div class="row">
-    <div class="col-xs-4 col-xs-offset-4">
+  <div class="row">
+    <div class="row" ng-show="showAuthors">
+      <div class="col-xs-3">
         <center>
-        <img class="animated img-responsive" src="assets/img/logo.png" alt="Boar" ng-class="boarAnimation" ng-click="animateBoar()" style="cursor: pointer"/>
+          <img class="animated infinite rotateIn img-responsive img-circle" src="assets/img/swierczek.jpg" />
+          <h4>Dawid Świerczek</h4>
+        </center>
+      </div>
+      <div class="col-xs-3">
+        <center>
+          <img class="animated infinite tada img-responsive img-circle" src="assets/img/wojtwoicz.png" />
+          <h4>Mariusz Wójtowicz</h4>
+        </center>
+      </div>
+      <div class="col-xs-3">
+        <center>
+          <img class="animated infinite jello img-responsive img-circle" src="assets/img/plenert.jpg" />
+          <h4>Adam Plenert</h4>
+        </center>
+      </div>
+      <div class="col-xs-3">
+        <center>
+          <img class="animated infinite rubberBand img-responsive img-circle" src="assets/img/guzy.jpg" />
+          <h4>Dominik Guzy</h4>
+        </center>
+      </div>
+    </div>
+    <div class="col-xs-4 col-xs-offset-4">
+      <center>
+        <img class="animated img-responsive" src="assets/img/logo.png" alt="Boar" ng-class="boarAnimation" ng-click="animateBoar()"
+          style="cursor: pointer" />
         <button class="btn btn-default btn-success" style="margin-left: -20px;" ng-hide="talkMode" ng-click="enableTalkMode()">Porozmawiajmy <i class="fa fa-comment"></i></button>
         <button class="btn btn-default btn-danger" style="margin-left: -20px;" ng-show="talkMode" ng-click="disableTalkMode()">Zakończ rozmowę <i class="fa fa-power-off"></i></button>
-        </center>
-        </div>
+      </center>
     </div>
-    </div>
+  </div>
+</div>
